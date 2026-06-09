@@ -10,404 +10,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after {
-      box-sizing: border-box !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    body {
-      font-family: 'Nunito', sans-serif !important;
-      background-color: #FFF5F8 !important;
-      color: #3d2b35 !important;
-      line-height: 1.7 !important;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      background: linear-gradient(135deg, #FFD6E7 0%, #FFAECB 50%, #FF8CB8 100%) !important;
-      text-align: center !important;
-      padding: 60px 24px 50px !important;
-      position: relative !important;
-      overflow: hidden !important;
-    }
-
-    .hero::before {
-      content: "🎀" !important;
-      font-size: 120px !important;
-      position: absolute !important;
-      top: -20px !important;
-      left: -20px !important;
-      opacity: 0.12 !important;
-      pointer-events: none !important;
-    }
-
-    .hero::after {
-      content: "🎀" !important;
-      font-size: 120px !important;
-      position: absolute !important;
-      bottom: -20px !important;
-      right: -20px !important;
-      opacity: 0.12 !important;
-      pointer-events: none !important;
-    }
-
-    .hero-eyebrow {
-      display: inline-block !important;
-      background: #fff !important;
-      color: #e85d9a !important;
-      font-size: 11px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.15em !important;
-      text-transform: uppercase !important;
-      padding: 5px 14px !important;
-      border-radius: 20px !important;
-      margin-bottom: 18px !important;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: clamp(2rem, 6vw, 3.4rem) !important;
-      font-weight: 900 !important;
-      color: #fff !important;
-      text-shadow: 0 2px 12px rgba(180,40,100,0.18) !important;
-      line-height: 1.15 !important;
-      margin-bottom: 16px !important;
-      max-width: 680px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .hero p {
-      font-size: 1.05rem !important;
-      color: #fff !important;
-      max-width: 520px !important;
-      margin: 0 auto 28px !important;
-      opacity: 0.93 !important;
-    }
-
-    .hero-badge {
-      display: inline-block !important;
-      background: #fff !important;
-      color: #e85d9a !important;
-      font-weight: 700 !important;
-      font-size: 0.82rem !important;
-      padding: 6px 18px !important;
-      border-radius: 20px !important;
-      box-shadow: 0 4px 16px rgba(200,60,120,0.18) !important;
-    }
-
-    /* ── Layout ── */
-    .container {
-      max-width: 860px !important;
-      margin: 0 auto !important;
-      padding: 0 20px !important;
-    }
-
-    /* ── Intro ── */
-    .intro {
-      padding: 48px 20px 12px !important;
-      max-width: 700px !important;
-      margin: 0 auto !important;
-      text-align: center !important;
-    }
-
-    .intro h2 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.7rem !important;
-      font-weight: 700 !important;
-      color: #c94a8a !important;
-      margin-bottom: 12px !important;
-    }
-
-    .intro p {
-      font-size: 1rem !important;
-      color: #5a3d4a !important;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      text-align: center !important;
-      margin: 36px auto !important;
-      color: #ffaecb !important;
-      font-size: 1.4rem !important;
-      letter-spacing: 0.3em !important;
-    }
-
-    /* ── Product Cards Grid ── */
-    .grid {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
-      gap: 28px !important;
-      padding: 12px 20px 48px !important;
-      max-width: 880px !important;
-      margin: 0 auto !important;
-    }
-
-    .card {
-      background: #fff !important;
-      border-radius: 20px !important;
-      box-shadow: 0 4px 24px rgba(200,80,140,0.10) !important;
-      overflow: hidden !important;
-      display: flex !important;
-      flex-direction: column !important;
-      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-      border: 2px solid #ffe0ef !important;
-    }
-
-    .card:hover {
-      transform: translateY(-4px) !important;
-      box-shadow: 0 10px 32px rgba(200,80,140,0.18) !important;
-    }
-
-    /* Product image area */
-    .card-img-wrap {
-      width: 100% !important;
-      aspect-ratio: 4/3 !important;
-      background: #fff0f6 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      overflow: hidden !important;
-      border-radius: 16px 16px 0 0 !important;
-      border-bottom: 2px dashed #ffe0ef !important;
-      padding: 14px !important;
-    }
-
-    .card-img-wrap img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      border-radius: 12px !important;
-      display: block !important;
-    }
-
-    /* Placeholder shown when no image */
-    .card-img-wrap .placeholder {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 12px !important;
-      background: linear-gradient(135deg, #ffe4f0, #ffd0e8) !important;
-      border: 2px dashed #ffaecb !important;
-      gap: 8px !important;
-    }
-
-    .placeholder-icon {
-      font-size: 2.2rem !important;
-    }
-
-    .placeholder-label {
-      font-size: 0.72rem !important;
-      font-weight: 700 !important;
-      color: #d06090 !important;
-      letter-spacing: 0.08em !important;
-      text-transform: uppercase !important;
-    }
-
-    /* Price badge */
-    .card-price {
-      display: inline-block !important;
-      background: #fff0f6 !important;
-      color: #c94a8a !important;
-      font-weight: 700 !important;
-      font-size: 1rem !important;
-      padding: 2px 10px !important;
-      border-radius: 20px !important;
-      margin-bottom: 8px !important;
-      border: 1px solid #ffc8e0 !important;
-    }
-
-    .card-body {
-      padding: 16px 18px 20px !important;
-      flex: 1 !important;
-      display: flex !important;
-      flex-direction: column !important;
-    }
-
-    .card-tag {
-      font-size: 0.68rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.1em !important;
-      text-transform: uppercase !important;
-      color: #e85d9a !important;
-      margin-bottom: 6px !important;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.05rem !important;
-      font-weight: 700 !important;
-      color: #3d2b35 !important;
-      margin-bottom: 8px !important;
-      line-height: 1.3 !important;
-    }
-
-    .card p {
-      font-size: 0.88rem !important;
-      color: #6b4d5c !important;
-      flex: 1 !important;
-      margin-bottom: 14px !important;
-    }
-
-    .btn {
-      display: block !important;
-      background: linear-gradient(135deg, #ff7eb6, #e8358a) !important;
-      color: #fff !important;
-      font-weight: 700 !important;
-      font-size: 0.84rem !important;
-      text-align: center !important;
-      text-decoration: none !important;
-      padding: 10px 16px !important;
-      border-radius: 30px !important;
-      transition: opacity 0.2s !important;
-      box-shadow: 0 3px 12px rgba(200,50,120,0.22) !important;
-      letter-spacing: 0.03em !important;
-    }
-
-    .btn:hover {
-      opacity: 0.85 !important;
-    }
-
-    /* ── Section heading ── */
-    .section-heading {
-      text-align: center !important;
-      padding: 36px 20px 4px !important;
-    }
-
-    .section-heading h2 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.85rem !important;
-      font-weight: 900 !important;
-      color: #c94a8a !important;
-    }
-
-    .section-heading p {
-      font-size: 0.95rem !important;
-      color: #7a5060 !important;
-      margin-top: 8px !important;
-      max-width: 480px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    /* ── Tips Banner ── */
-    .tips-banner {
-      background: linear-gradient(135deg, #fff0f6, #ffe0ef) !important;
-      border: 2px solid #ffc8e0 !important;
-      border-radius: 20px !important;
-      padding: 32px 28px !important;
-      max-width: 700px !important;
-      margin: 0 auto 48px !important;
-    }
-
-    .tips-banner h3 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.25rem !important;
-      color: #c94a8a !important;
-      margin-bottom: 14px !important;
-    }
-
-    .tips-banner ul {
-      list-style: none !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 8px !important;
-    }
-
-    .tips-banner li {
-      font-size: 0.93rem !important;
-      color: #5a3d4a !important;
-      padding-left: 24px !important;
-      position: relative !important;
-    }
-
-    .tips-banner li::before {
-      content: "🎀" !important;
-      position: absolute !important;
-      left: 0 !important;
-      font-size: 0.85rem !important;
-    }
-
-    /* ── CTA / Links Section ── */
-    .cta-section {
-      background: linear-gradient(135deg, #FFAECB, #FF6FAD) !important;
-      padding: 48px 24px !important;
-      text-align: center !important;
-    }
-
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.7rem !important;
-      font-weight: 900 !important;
-      color: #fff !important;
-      margin-bottom: 10px !important;
-    }
-
-    .cta-section p {
-      color: #fff !important;
-      font-size: 0.95rem !important;
-      margin-bottom: 28px !important;
-      opacity: 0.92 !important;
-    }
-
-    .cta-links {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 14px !important;
-      justify-content: center !important;
-    }
-
-    .cta-link {
-      display: inline-block !important;
-      background: #fff !important;
-      color: #e8358a !important;
-      font-weight: 700 !important;
-      font-size: 0.9rem !important;
-      padding: 12px 28px !important;
-      border-radius: 30px !important;
-      text-decoration: none !important;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
-      transition: transform 0.15s, box-shadow 0.15s !important;
-    }
-
-    .cta-link:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.16) !important;
-    }
-
-    /* ── Disclosure ── */
-    .disclosure {
-      text-align: center !important;
-      font-size: 0.75rem !important;
-      color: #a07080 !important;
-      padding: 20px 24px 32px !important;
-      max-width: 600px !important;
-      margin: 0 auto !important;
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: #3d2b35 !important;
-      color: #c98baa !important;
-      text-align: center !important;
-      padding: 20px !important;
-      font-size: 0.8rem !important;
-    }
-
-    /* ── Responsive ── */
+    *, *::before, *::after { box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
+    body { font-family: 'Nunito', sans-serif !important; background-color: #FFF5F8 !important; color: #3d2b35 !important; line-height: 1.7 !important; }
+    .hero { background: linear-gradient(135deg, #FFD6E7 0%, #FFAECB 50%, #FF8CB8 100%) !important; text-align: center !important; padding: 60px 24px 50px !important; position: relative !important; overflow: hidden !important; }
+    .hero::before { content: "🎀" !important; font-size: 120px !important; position: absolute !important; top: -20px !important; left: -20px !important; opacity: 0.12 !important; pointer-events: none !important; }
+    .hero::after { content: "🎀" !important; font-size: 120px !important; position: absolute !important; bottom: -20px !important; right: -20px !important; opacity: 0.12 !important; pointer-events: none !important; }
+    .hero-eyebrow { display: inline-block !important; background: #fff !important; color: #e85d9a !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.15em !important; text-transform: uppercase !important; padding: 5px 14px !important; border-radius: 20px !important; margin-bottom: 18px !important; }
+    .hero h1 { font-family: 'Playfair Display', serif !important; font-size: clamp(2rem, 6vw, 3.4rem) !important; font-weight: 900 !important; color: #fff !important; text-shadow: 0 2px 12px rgba(180,40,100,0.18) !important; line-height: 1.15 !important; margin-bottom: 16px !important; max-width: 680px !important; margin-left: auto !important; margin-right: auto !important; }
+    .hero p { font-size: 1.05rem !important; color: #fff !important; max-width: 520px !important; margin: 0 auto 28px !important; opacity: 0.93 !important; }
+    .hero-badge { display: inline-block !important; background: #fff !important; color: #e85d9a !important; font-weight: 700 !important; font-size: 0.82rem !important; padding: 6px 18px !important; border-radius: 20px !important; box-shadow: 0 4px 16px rgba(200,60,120,0.18) !important; }
+    .container { max-width: 860px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .intro { padding: 48px 20px 12px !important; max-width: 700px !important; margin: 0 auto !important; text-align: center !important; }
+    .intro h2 { font-family: 'Playfair Display', serif !important; font-size: 1.7rem !important; font-weight: 700 !important; color: #c94a8a !important; margin-bottom: 12px !important; }
+    .intro p { font-size: 1rem !important; color: #5a3d4a !important; }
+    .divider { text-align: center !important; margin: 36px auto !important; color: #ffaecb !important; font-size: 1.4rem !important; letter-spacing: 0.3em !important; }
+    .grid { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important; gap: 28px !important; padding: 12px 20px 48px !important; max-width: 880px !important; margin: 0 auto !important; }
+    .card { background: #fff !important; border-radius: 20px !important; box-shadow: 0 4px 24px rgba(200,80,140,0.10) !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; transition: transform 0.2s ease, box-shadow 0.2s ease !important; border: 2px solid #ffe0ef !important; }
+    .card:hover { transform: translateY(-4px) !important; box-shadow: 0 10px 32px rgba(200,80,140,0.18) !important; }
+    .card-img-wrap { width: 100% !important; aspect-ratio: 4/3 !important; background: #fff0f6 !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; border-radius: 16px 16px 0 0 !important; border-bottom: 2px dashed #ffe0ef !important; padding: 14px !important; }
+    .card-img-wrap img { width: 100% !important; height: 100% !important; object-fit: contain !important; border-radius: 12px !important; display: block !important; }
+    .card-price { display: inline-block !important; background: #fff0f6 !important; color: #c94a8a !important; font-weight: 700 !important; font-size: 1rem !important; padding: 2px 10px !important; border-radius: 20px !important; margin-bottom: 8px !important; border: 1px solid #ffc8e0 !important; }
+    .card-body { padding: 16px 18px 20px !important; flex: 1 !important; display: flex !important; flex-direction: column !important; }
+    .card-tag { font-size: 0.68rem !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: #e85d9a !important; margin-bottom: 6px !important; }
+    .card h3 { font-family: 'Playfair Display', serif !important; font-size: 1.05rem !important; font-weight: 700 !important; color: #3d2b35 !important; margin-bottom: 8px !important; line-height: 1.3 !important; }
+    .card p { font-size: 0.88rem !important; color: #6b4d5c !important; flex: 1 !important; margin-bottom: 14px !important; }
+    .btn { display: block !important; background: linear-gradient(135deg, #ff7eb6, #e8358a) !important; color: #fff !important; font-weight: 700 !important; font-size: 0.84rem !important; text-align: center !important; text-decoration: none !important; padding: 10px 16px !important; border-radius: 30px !important; transition: opacity 0.2s !important; box-shadow: 0 3px 12px rgba(200,50,120,0.22) !important; letter-spacing: 0.03em !important; }
+    .btn:hover { opacity: 0.85 !important; }
+    .section-heading { text-align: center !important; padding: 36px 20px 4px !important; }
+    .section-heading h2 { font-family: 'Playfair Display', serif !important; font-size: 1.85rem !important; font-weight: 900 !important; color: #c94a8a !important; }
+    .section-heading p { font-size: 0.95rem !important; color: #7a5060 !important; margin-top: 8px !important; max-width: 480px !important; margin-left: auto !important; margin-right: auto !important; }
+    .tips-banner { background: linear-gradient(135deg, #fff0f6, #ffe0ef) !important; border: 2px solid #ffc8e0 !important; border-radius: 20px !important; padding: 32px 28px !important; max-width: 700px !important; margin: 0 auto 48px !important; }
+    .tips-banner h3 { font-family: 'Playfair Display', serif !important; font-size: 1.25rem !important; color: #c94a8a !important; margin-bottom: 14px !important; }
+    .tips-banner ul { list-style: none !important; display: flex !important; flex-direction: column !important; gap: 8px !important; }
+    .tips-banner li { font-size: 0.93rem !important; color: #5a3d4a !important; padding-left: 24px !important; position: relative !important; }
+    .tips-banner li::before { content: "🎀" !important; position: absolute !important; left: 0 !important; font-size: 0.85rem !important; }
+    .cta-section { background: linear-gradient(135deg, #FFAECB, #FF6FAD) !important; padding: 48px 24px !important; text-align: center !important; }
+    .cta-section h2 { font-family: 'Playfair Display', serif !important; font-size: 1.7rem !important; font-weight: 900 !important; color: #fff !important; margin-bottom: 10px !important; }
+    .cta-section p { color: #fff !important; font-size: 0.95rem !important; margin-bottom: 28px !important; opacity: 0.92 !important; }
+    .cta-links { display: flex !important; flex-wrap: wrap !important; gap: 14px !important; justify-content: center !important; }
+    .cta-link { display: inline-block !important; background: #fff !important; color: #e8358a !important; font-weight: 700 !important; font-size: 0.9rem !important; padding: 12px 28px !important; border-radius: 30px !important; text-decoration: none !important; box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important; transition: transform 0.15s, box-shadow 0.15s !important; }
+    .cta-link:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.16) !important; }
+    .disclosure { text-align: center !important; font-size: 0.75rem !important; color: #a07080 !important; padding: 20px 24px 32px !important; max-width: 600px !important; margin: 0 auto !important; }
+    footer { background: #3d2b35 !important; color: #c98baa !important; text-align: center !important; padding: 20px !important; font-size: 0.8rem !important; }
     @media (max-width: 480px) {
-      .grid {
-        grid-template-columns: 1fr !important;
-        padding: 12px 16px 36px !important;
-      }
-      .hero h1 {
-        font-size: 1.8rem !important;
-      }
+      .grid { grid-template-columns: 1fr !important; padding: 12px 16px 36px !important; }
+      .hero h1 { font-size: 1.8rem !important; }
     }
   </style>
 </head>
@@ -429,10 +76,7 @@
 
   <div class="divider">· · · 🎀 · · ·</div>
 
-  <!-- =============================================
-       SECTION: TABLE DECOR
-       To add a product: copy one <div class="card"> block and fill in the details.
-       ============================================= -->
+  <!-- SECTION: TABLE DECOR -->
   <div class="section-heading">
     <h2>🍽️ Table Decor &amp; Linens</h2>
     <p>Set the scene with a beautiful pink table that photos will love.</p>
@@ -440,15 +84,9 @@
 
   <div class="grid" id="section-table-decor">
 
-    <!-- PRODUCT: Lann's Linens Pink Tablecloth -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- To add image: replace the placeholder div below with:
-             <img src="YOUR_IMAGE.png" alt="Lann's Linens Pink Tablecloth" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image1.png" alt="Lann's Linens 90x132 Pink Rectangular Tablecloth" />
       </div>
       <div class="card-body">
         <span class="card-tag">Table Linen</span>
@@ -459,15 +97,26 @@
       </div>
     </div>
 
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="image2.png" alt="Peiking 161PC Pink Kittens Birthday Party Supplies Kit" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Party Bundle</span>
+        <h3>Peiking 161PC Pink Kittens Birthday Party Supplies Kit</h3>
+        <span class="card-price">$21.99</span>
+        <p>A massive 161-piece all-in-one kit — plates, cups, napkins, tablecloth, straws, and cutlery all in a matching pink polka-dot kitty theme. Perfect if you want everything sorted in one order.</p>
+        <a href="https://amzn.to/4fRPCYX" class="btn" target="_blank" rel="nofollow sponsored noopener">See It on Amazon →</a>
+      </div>
+    </div>
+
     <!-- ADD MORE TABLE DECOR PRODUCTS HERE -->
 
   </div>
 
   <div class="divider">· · · 🎀 · · ·</div>
 
-  <!-- =============================================
-       SECTION: HELLO KITTY GIFTS & KEEPSAKES
-       ============================================= -->
+  <!-- SECTION: GIFTS & KEEPSAKES -->
   <div class="section-heading">
     <h2>🎁 Hello Kitty Gifts &amp; Keepsakes</h2>
     <p>Adorable finds she'll treasure long after the party's over.</p>
@@ -475,14 +124,9 @@
 
   <div class="grid" id="section-gifts">
 
-    <!-- PRODUCT: Silver Buffalo Ceramic Mug -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="silver-buffalo-mug.png" alt="Sanrio Hello Kitty Pink Bow Sculpted Ceramic Mini Mug" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image3.png" alt="Sanrio Hello Kitty Pink Bow Sculpted Ceramic Mini Mug" />
       </div>
       <div class="card-body">
         <span class="card-tag">Keepsake</span>
@@ -493,14 +137,9 @@
       </div>
     </div>
 
-    <!-- PRODUCT: Sanrio Hello Kitty Pen Stand -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="sanrio-pen-stand.png" alt="Sanrio Hello Kitty Character Shaped Pen Stand" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image4.png" alt="Sanrio Hello Kitty Character Shaped Pen Stand" />
       </div>
       <div class="card-body">
         <span class="card-tag">Gift / Activity Favor</span>
@@ -511,14 +150,9 @@
       </div>
     </div>
 
-    <!-- PRODUCT: My Melody Roller Eraser -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="my-melody-eraser.png" alt="Cute Character Roller Eraser My Melody" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image5.png" alt="My Melody Cute Character Roller Eraser" />
       </div>
       <div class="card-body">
         <span class="card-tag">Party Favor</span>
@@ -529,14 +163,9 @@
       </div>
     </div>
 
-    <!-- PRODUCT: Prettyia Kawaii Tissue Box -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="prettyia-tissue-box.png" alt="Prettyia Kawaii Pink Kitty Tissue Box" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image6.png" alt="Prettyia Kawaii Pink Kitty Tissue Box Cover" />
       </div>
       <div class="card-body">
         <span class="card-tag">Decor</span>
@@ -553,9 +182,7 @@
 
   <div class="divider">· · · 🎀 · · ·</div>
 
-  <!-- =============================================
-       SECTION: DRINKWARE
-       ============================================= -->
+  <!-- SECTION: DRINKWARE -->
   <div class="section-heading">
     <h2>🥛 Drinkware &amp; Glasses</h2>
     <p>Sip in style with Hello Kitty glasses that double as keepsakes.</p>
@@ -563,14 +190,9 @@
 
   <div class="grid" id="section-drinkware">
 
-    <!-- PRODUCT: JoyJolt Hello Kitty Glasses -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="joyjolt-glasses.png" alt="JoyJolt Hello Kitty & Friends Rainbow Short Drinking Glasses" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image7.png" alt="JoyJolt Hello Kitty and Friends Rainbow Short Drinking Glasses" />
       </div>
       <div class="card-body">
         <span class="card-tag">Drinkware</span>
@@ -581,14 +203,9 @@
       </div>
     </div>
 
-    <!-- PRODUCT: Hello Kitty Strawberry Milk Carton Glass -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="hk-milk-carton.png" alt="Hello Kitty Sanrio Glass Strawberry Milk Carton" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image8.png" alt="Hello Kitty Sanrio Glass Strawberry Milk Carton" />
       </div>
       <div class="card-body">
         <span class="card-tag">Drinkware</span>
@@ -605,9 +222,7 @@
 
   <div class="divider">· · · 🎀 · · ·</div>
 
-  <!-- =============================================
-       SECTION: CAKE & CANDLES
-       ============================================= -->
+  <!-- SECTION: CAKE & CANDLES -->
   <div class="section-heading">
     <h2>🎂 Cake &amp; Candles</h2>
     <p>Top the cake with the cutest finishing touches.</p>
@@ -615,14 +230,9 @@
 
   <div class="grid" id="section-cake">
 
-    <!-- PRODUCT: ZelZeluna Number 1 Birthday Candle -->
     <div class="card">
       <div class="card-img-wrap">
-        <!-- <img src="zelzeluna-candle.png" alt="ZelZeluna Large 3D Cartoon Cat Number 1 Birthday Candle" /> -->
-        <div class="placeholder">
-          <span class="placeholder-icon">🎀</span>
-          <span class="placeholder-label">Add Photo</span>
-        </div>
+        <img src="image9.png" alt="ZelZeluna Large 3D Cartoon Cat Number 1 Birthday Candle" />
       </div>
       <div class="card-body">
         <span class="card-tag">Cake Candle</span>
